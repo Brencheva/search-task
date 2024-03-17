@@ -1,5 +1,3 @@
-export const searchDelay = 300;
-
 export const SearchIcon = () => (
   <svg
     fill="none"
@@ -15,13 +13,7 @@ export const SearchIcon = () => (
 );
 
 export const CloseIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 40 40"
-  className="w-10 w-6 h-6"
-  >
-    <path
-      d="M 10,10 L 30,30 M 30,10 L 10,30"
-      stroke="grey"
-      stroke-width="4"
-    />
+  <svg width="40" height="40" viewBox="0 0 40 40" className="w-10 w-6 h-6">
+    <path d="M 10,10 L 30,30 M 30,10 L 10,30" stroke="grey" stroke-width="4" />
   </svg>
 );

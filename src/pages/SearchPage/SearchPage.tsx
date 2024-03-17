@@ -1,8 +1,8 @@
 import { useGetProducts } from "../../hooks";
-import ProductCard from "../ProductCard/ProductCard";
-import { CloseIcon, SearchIcon } from "./SearchBar.const";
+import ProductCard from "../../components/ProductCard/ProductCard";
+import { SearchField } from "../../components";
 
-export default function SearchBar() {
+export default function SearchPage() {
   const { query, setQuery, loading, error, products } = useGetProducts();
 
   const search = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,20 +18,7 @@ export default function SearchBar() {
 
   return (
     <div className="p-8 flex flex-col align-center">
-      <div className="w-full flex items-center relative mb-8">
-        <input
-          type="text"
-          placeholder="search"
-          data-testid="search-field"
-          className="border border-purple-400 rounded-lg py-4 px-12 w-full"
-          onChange={search}
-          value={query}
-        />
-        <SearchIcon />
-        <button className="absolute right-0 mr-2 " onClick={reset} data-testid="reset-button">
-          <CloseIcon />
-        </button>
-      </div>
+      <SearchField value={query} onChange={search} reset={reset} />
       <ul
         className={
           products.length ? "list-none flex flex-wrap width-full" : "invisible"
